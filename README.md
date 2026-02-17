@@ -1,59 +1,226 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚Aplicación web Full-Stack con Laravel y Vite
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistema web completo para la gestión de una biblioteca virtual, desarrollado con **Laravel 10**, **Laravel Breeze** y arquitectura con **Git Flow**.  
+Permite administrar libros, usuarios, préstamos y categorías de manera eficiente e intuitiva.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Estado del Proyecto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+✅ CRUD completo funcional  
+✅ Sistema de autenticación con Laravel Breeze  
+✅ Arquitectura Git Flow implementada  
+✅ Relaciones Eloquent correctamente configuradas  
+✅ Seeders con datos de prueba  
+✅ Control automático de disponibilidad de libros  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🌿 Metodología de Trabajo – Git Flow
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Este proyecto utiliza **Git Flow** como estrategia de ramificación:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- `main` → versión estable lista para producción
+- `dev` → rama de desarrollo principal
+- `feature/*` → nuevas funcionalidades
+- `hotfix/*` → correcciones urgentes
 
-## Laravel Sponsors
+Ejemplo de flujo utilizado:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+git checkout -b feature/import-legacy
+git add .
+git commit -m "feat: implementación completa biblioteca"
+git checkout dev
+git merge feature/import-legacy
+git push origin dev
+```
 
-### Premium Partners
+Esto garantiza:
+- Desarrollo ordenado
+- Historial limpio
+- Separación entre versión estable y desarrollo
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🔐 Autenticación – Laravel Breeze
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+El sistema incluye:
 
-## Code of Conduct
+- Registro de usuarios
+- Inicio de sesión
+- Recordar sesión
+- Recuperación de contraseña
+- Cierre de sesión
+- Protección de rutas con middleware `auth`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Breeze se integró y se adaptó el diseño visual para mantener coherencia con el layout del proyecto.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🌟 Características Principales
 
-## License
+### 📚 Gestión Completa de Libros (CRUD)
+- Crear, editar, visualizar y eliminar libros
+- Asociar libros a múltiples categorías (relación N:M)
+- Control de copias disponibles
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 👥 Administración de Usuarios
+- Registro con validación
+- Historial completo de préstamos
+- Visualización de préstamos activos y devueltos
+
+### 🧾 Sistema de Préstamos
+- Crear y gestionar préstamos
+- Control automático de disponibilidad
+- Marcar préstamos como devueltos
+- Incremento automático de copias al devolver
+
+### 🏷️ Organización por Categorías
+- Relación N:M libros-categorías
+- Filtrado por género
+- Asociación múltiple
+
+### 🎨 Interfaz Moderna
+- Blade templating
+- Tailwind CSS
+- Layout reutilizable
+- Diseño responsive
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+| Tecnología | Uso |
+|------------|------|
+| Laravel 10 | Framework backend |
+| Laravel Breeze | Autenticación |
+| Eloquent ORM | Base de datos |
+| Blade | Motor de plantillas |
+| Tailwind CSS | Estilos |
+| MySQL / SQLite | Base de datos |
+| Git Flow | Control de versiones |
+| PHP 8.1+ | Backend |
+
+---
+
+## 🗂️ Modelo de Datos
+
+### 🧍 usuarios
+- id
+- nombre
+- email
+- password
+
+### 📚 libros
+- id
+- titulo
+- autor
+- isbn
+- disponibles
+
+### 🏷️ categorias
+- id
+- nombre
+- descripcion
+
+### 🔗 libro_categorias (pivot)
+- id_libro
+- id_categoria
+
+### 🧾 prestamos
+- id
+- id_usuario
+- id_libro
+- fecha_prestamo
+- fecha_devolucion
+- devuelto (boolean)
+
+---
+
+## ⚙️ Instalación
+
+```bash
+git clone https://github.com/jenifera5/sprint4.git
+cd bibliotecaweb
+
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+Configurar base de datos en `.env`
+
+```bash
+php artisan migrate:fresh --seed
+php artisan serve
+```
+
+Abrir:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## 📌 Comandos Útiles
+
+### Migraciones
+```bash
+php artisan migrate
+php artisan migrate:fresh --seed
+```
+
+### Seeders
+```bash
+php artisan db:seed
+```
+
+### Rutas
+```bash
+php artisan route:list
+```
+
+### Limpieza de caché
+```bash
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear
+```
+
+---
+
+## 🔒 Seguridad Implementada
+
+- Protección CSRF
+- Hashing de contraseñas (bcrypt)
+- Middleware `auth`
+- Validación en formularios
+- Prevención de SQL Injection (Eloquent)
+
+---
+
+## 📈 Próximas Mejoras
+
+- API REST
+- Panel administrador con roles
+- Búsqueda avanzada
+- Sistema de reservas
+- Notificaciones por email
+- Tests automatizados
+
+---
+
+## 👩‍💻 Autora
+
+**Jenifer Álvarez**  
+Backend Developer (PHP / Laravel)  
+GitHub: https://github.com/jenifera5  
+Email: jeniferalvarez12@gmail.com
+
+---
+
+## 📄 Licencia
+
+Proyecto académico desarrollado como parte del Sprint 4.
